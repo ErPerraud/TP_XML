@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	Schéma de définition d'une bibliographie.
+-->
+
+<!--
+	Version 1.1 du 131119 utf8, 
+  23/01/2004 Création.
+
+-->
+
+<!--<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema' targetNamespace="schemas/biblio/" xmlns="schemas/biblio/"-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation>
+		<xs:documentation>Schéma de définition d'une bibliographie.</xs:documentation>
+	</xs:annotation>
+	
+<!-- Définition de types simples (ne contenant pas d'éléments) -->
+
+	<xs:simpleType name="isbnType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{10}"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="pagesType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]+ à [0-9]+"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="numéroDeTéléphone">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	
+<!-- Définition des éléments simples et des attributs -->
+
+	<xs:element name="auteur" type="xs:string"></xs:element>
+	<xs:element name="editeur" type="xs:string"></xs:element>
+	<xs:element name="titre" type="xs:string"></xs:element>
+	<xs:element name="description" type="xs:string"></xs:element>
+	<xs:element name="revue" type="xs:string"></xs:element>
+	
+	<xs:attribute name="href" type="xs:anyURI"></xs:attribute>
+	<xs:attribute name="date" type="xs:date"></xs:attribute>
+	<xs:attribute name="ISBN" type="isbnType"></xs:attribute>
+	<xs:attribute name="annee" type="xs:gYear"></xs:attribute>
+	<xs:attribute name="lang" type="xs:language"></xs:attribute>
+	<xs:attribute name="pages" type="pagesType"></xs:attribute>
+	
+<!-- Définition des éléments de type complexe -->
+
+	<xs:element name="biblio">
+		<xs:annotation>
+			<xs:documentation>Elément racine</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="livre"></xs:element>
+				<xs:element ref="article"></xs:element>
+				<xs:element ref="lien"></xs:element>
+			</xs:choice>
+    	<xs:attribute name="idList" type="xs:IDREFS"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="livre">
+		<xs:annotation>
+			<xs:documentation>Permet de déclarer les références d'un livre.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="titre"></xs:element> <!-- quand non specifié par défaut min et max 1-->
+				<xs:element ref="auteur"></xs:element>
+				<xs:element ref="editeur"></xs:element>
+				<xs:element ref="description" minOccurs="0" maxOccurs="1"></xs:element>
+			</xs:sequence>
+			<xs:attribute name="annee" use="optional">
+				<xs:annotation><xs:documentation>Année de parution.</xs:documentation></xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="ISBN" use="optional"></xs:attribute>
+			<xs:attribute name="lang" default="fr"></xs:attribute>
+			<xs:attribute ref="pages" use="optional"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+<!-- Si élément peut contenir à la fois des attributs et du texte il faut spécifier mixed à true ; par defaut à false-->
+	<xs:element name="article">
+		<xs:annotation>
+			<xs:documentation>Référence vers un article de journal, de revue...</xs:documentation>
+		</xs:annotation>
+		<xs:complexType mixed="true">
+			<xs:sequence>
+				<xs:element ref="titre"></xs:element>
+				<xs:element ref="auteur"></xs:element>
+				<xs:element ref="revue"></xs:element>
+				<xs:element ref="description" minOccurs="0" maxOccurs="1"></xs:element>
+			</xs:sequence>
+			<xs:attribute ref="pages" use="required"></xs:attribute>
+			<xs:attribute name="lang" default="fr"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="lien">
+		<xs:annotation><xs:documentation>Référence vers un site Web</xs:documentation></xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="titre"></xs:element>
+				<xs:element ref="auteur" minOccurs="0" maxOccurs="1"></xs:element>
+				<xs:element ref="description" minOccurs="0" maxOccurs="1"></xs:element>
+			</xs:sequence>
+			<xs:attribute ref="lang" default="fr"></xs:attribute>
+			<xs:attribute ref="href" use="required"></xs:attribute>
+			<xs:attribute ref="date" use="optional"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="identite">
+		<xs:annotation><xs:documentation>Identifiant d'un individu</xs:documentation></xs:annotation>
+    <xs:complexType>
+      <xs:all> <!-- les éléments doivent tous apparaître (dans n'importe quel ordre) ou pas du tout -->
+        <xs:element name="nom" type="xs:string"></xs:element>
+        <xs:element name="prénom" type="xs:string"></xs:element>
+        <xs:element name="dateDeNaissance" type="xs:date"></xs:element>
+        <xs:element name="adresse" type="xs:string"></xs:element>
+        <xs:element name="adresseElectronique" type="xs:string"></xs:element>
+        <xs:element name="téléphone" type="numéroDeTéléphone"></xs:element>
+      </xs:all>
+    </xs:complexType>
+		</xs:element>
+</xs:schema>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE examen SYSTEM "exam.dtd">
+
+<!-- exemple de fichier examen  -->
+<examen code="122">
+  <titre>Outils et documents XML</titre>
+  <date mois="nov" annee="2022" />
+  <questions>
+    <question><partie /></question>
+    <question><partie> bla bla</partie></question>
+    <question><partie> bla bla <partie/> bla <partie/> </partie></question>
+    <question><partie> bla bla <partie/> bla <partie/> </partie></question>
+    <question><partie> bla bla <partie/> bla <partie/> </partie></question>
+  </questions>
+  <oblige obligatoire="true"></oblige>
+</examen>

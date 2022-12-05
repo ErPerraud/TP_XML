@@ -1,0 +1,2 @@
+cat library03.xml | perl -ne 's/^\s+//g; s/\s+$//g;  print' > lib3.xml
+cat library06.xml | perl -ne 's/^\s+//g; s/\s+$//g;  print' > lib6.xml 

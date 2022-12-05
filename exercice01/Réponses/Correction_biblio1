@@ -1,0 +1,9 @@
+Ex1)
+    - Ligne 8 : Ouverture d'un auteur suivi d'une fermeture d'un éditeur ;
+    - Ligne 13 : Ouverture en quinconce des balises auteur et editeur ;
+    - Ligne 16 : Oubli de double cotes dans l'annee du livre ;
+    - Ligne 17 : Appel d'une entité "xml" sans définition ;
+    - Ligne 19 : Balise editeur vide ;
+    - Ligne 33 : Pas de fermeture de la balse html ;
+    - Ligne 35 : Balise script vide ;
+    - Ligne 41 : Element br en majuscule.

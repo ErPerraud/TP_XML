@@ -1,0 +1,25 @@
+<!ELEMENT author ( name, born, dead ) >
+<!ATTLIST author id NMTOKEN #REQUIRED >
+
+<!ELEMENT book ( isbn, title, author, character+ ) >
+<!ATTLIST book available NMTOKEN #REQUIRED >
+<!ATTLIST book id NMTOKEN #REQUIRED >
+
+<!ELEMENT born ( #PCDATA ) >
+
+<!ELEMENT character ( name, born, qualification ) >
+<!ATTLIST character id NMTOKEN #IMPLIED >
+
+<!ELEMENT dead ( #PCDATA ) >
+
+<!ELEMENT isbn ( #PCDATA ) >
+
+<!ELEMENT library ( book ) >
+
+<!ELEMENT name ( #PCDATA ) >
+
+<!ELEMENT qualification ( #PCDATA ) >
+
+<!ELEMENT title ( #PCDATA ) >
+<!ATTLIST title lang NMTOKEN #REQUIRED >
+

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<!-- exemple de fichier examen  -->
+
+<examen code="coursXML">
+  <titre>Outils et documents XML</titre>
+  <date mois="sep" annee="2008" />
+  <questions>
+    <question><partie /></question>
+    <question><partie /><partie /></question>
+    <question><partie> bla bla</partie></question>
+    <question><partie> bla bla <partie/> bla <partie/> </partie></question>
+    <question> <partie> bla bla <partie> bla bla</partie> </partie></question>
+  </questions>
+</examen>

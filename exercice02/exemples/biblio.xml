@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>  <!-- ceci est un commentaire visant à décrire le prologue d'un document XML -->
+<!DOCTYPE biblio SYSTEM "biblio.dtd"> 
+<biblio idList="a2253096342 a2253096343"> <!-- élément racine -->
+
+<!-- cible instruction -->
+<?php
+  function maFonc($x)
+    x=24;
+    echo "bonjour";
+    for($i=1;$i<=10;$i=$i+1) x=x+1;
+    return x;
+?>
+
+<!-- un livre -->
+  <!-- attributs de type ID sont des noms XML -->
+	<livre annee="1862" ISBN="a2253096342" lang="fr" pages="1500">
+		<titre>Les Misérables</titre>
+		<auteur>Victor Hugo</auteur>
+		<editeur>Lacroix et Verboeckhoven</editeur>
+    
+	</livre>
+
+	<!-- un autre livre -->
+	
+	<livre annee="1998" ISBN="a2253096343">
+		<titre>Autour d'&xml;</titre>
+		<auteur>José Crivain</auteur>
+		<editeur></editeur>
+    <description>
+      <!-- CDATA (Character Data) : portion de texte non interprétée 
+           (à la différence des PCDATA Parsed Character Data
+       -->
+      <![CDATA[<elt> est une balise ouvrante et & est une esperluette]]>
+      1 &lt; 2
+    </description>
+	</livre>
+
+
+  <article xmlns:math="http://mon.site.fr/MathML.html" xmlns:text="http://mon.site.fr/TextML.html">
+    Ceci est une fonction mathématique : <math:fn>1+1</math:fn>
+    Tandis que cela sera une note de bas de page <text:fn>1+1</text:fn>
+
+  </article>
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <title>Hello world!</title>
+    <script language="javascript">top.DSfirstAccess = 1504538234;top.DSmaxTimeout=28800;top.DStimediff=1504539547 - parseInt(""+(new Date()).getTime()/1000);</script><script language="javascript" id="dsshim" src="/dana-cached/js/shimdata.cgi"></script><script language="javascript" id="dsfunc" src="/dana-cached/js/oth_18dbed3d1620b09fa1f569d8686f36286e503cfa396ed1b07cf35ae4b7454281.js"></script><script language="javascript" id="dstimeout" src="/dana-cached/js/sessiontimeout_18dbed3d1620b09fa1f569d8686f36286e503cfa396ed1b07cf35ae4b7454281.js"></script><script language="javascript" id="dsvar" >
+//<![CDATA[
+var dsnodocwrites = 0 ; var DanaCookie=""; var DSHost="nomade.univ-nantes.fr"; var DSDanaInfoStr=""; var DSLang="fr"; var DSObfuscateHostname=1;var DSTBSettings=152917;var DSTBLU='/dana/home/starter.cgi?startpageonly=1';;danaSetDSHost();
+//]]>
+</script></head>
+    <body>
+      <h1>This is a heading</h1>
+      This is some text.
+      <BR/>
+    </body>
+  <script language="javascript" id="dstb-id">dstb()</script><script language="javascript" id="dstimer">
+//<![CDATA[
+if(dschk() == 1) { if(typeof (dsSetTimers) != "undefined") { dsSetTimers(1504538234,1504539526,1800,28800,900,1504539547 - parseInt(""+(new Date()).getTime()/1000),1);}}
+//]]>
+</script></html>
+
+
+</biblio>	
+	

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<biblio>
+	<!--debut de la biblio-->
+	<livre isbn="a1" lang="fr">
+		<titre>Un super livre</titre>
+ 		<auteur><prenom>Victor</prenom><nom>Rent</nom></auteur>
+ 		<nb_tomes>3</nb_tomes>
+	</livre>
+	<livre isbn="b2" lang="fr">
+		<titre>Un bouquin pas mal</titre>
+		<auteur><prenom>Phil</prenom><nom>Connors</nom></auteur>
+		<auteur><prenom>Fred</prenom><nom>Aster</nom></auteur>
+ 		<nb_tomes>2</nb_tomes>
+	</livre>
+	<livre isbn="c3" lang="en">
+		<titre>A very good book</titre>
+		<auteur><prenom>Jean</prenom><nom>Bon</nom></auteur>
+		<nb_tomes>2</nb_tomes>
+	</livre>
+</biblio>

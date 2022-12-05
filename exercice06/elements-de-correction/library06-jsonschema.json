@@ -1,0 +1,185 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Empty",
+    "definitions": {
+        "Empty": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "library": {
+                    "$ref": "#/definitions/Library"
+                }
+            },
+            "required": [
+                "library"
+            ],
+            "title": "Empty"
+        },
+        "Library": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "book": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Book"
+                    }
+                }
+            },
+            "required": [
+                "book"
+            ],
+            "title": "Library"
+        },
+        "Book": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "-id": {
+                    "type": "string"
+                },
+                "-available": {
+                    "$ref": "#/definitions/Available"
+                },
+                "isbn": {
+                    "type": "string"
+                },
+                "title": {
+                    "$ref": "#/definitions/Title"
+                },
+                "author": {
+                    "$ref": "#/definitions/Author"
+                },
+                "character": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Author"
+                    }
+                }
+            },
+            "required": [
+                "-available",
+                "-id",
+                "author",
+                "character",
+                "isbn",
+                "title"
+            ],
+            "title": "Book"
+        },
+        "Author": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "-id": {
+                    "$ref": "#/definitions/ID"
+                },
+                "name": {
+                    "$ref": "#/definitions/Name"
+                },
+                "born": {
+                    "$ref": "#/definitions/BornUnion"
+                },
+                "dead": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "qualification": {
+                    "$ref": "#/definitions/Qualification"
+                }
+            },
+            "required": [
+                "born",
+                "name"
+            ],
+            "title": "Author"
+        },
+        "Title": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "-lang": {
+                    "$ref": "#/definitions/Lang"
+                },
+                "#text": {
+                    "$ref": "#/definitions/Text"
+                }
+            },
+            "required": [
+                "#text",
+                "-lang"
+            ],
+            "title": "Title"
+        },
+        "BornUnion": {
+            "anyOf": [
+                {
+                    "type": "string",
+                    "format": "date"
+                },
+                {
+                    "$ref": "#/definitions/BornEnum"
+                }
+            ],
+            "title": "BornUnion"
+        },
+        "Available": {
+            "type": "string",
+            "enum": [
+                "maybe"
+            ],
+            "title": "Available"
+        },
+        "ID": {
+            "type": "string",
+            "enum": [
+                "CMS",
+                "PP",
+                "Snoopy",
+                "Schroeder"
+            ],
+            "title": "ID"
+        },
+        "BornEnum": {
+            "type": "string",
+            "enum": [
+                "1966-8-22"
+            ],
+            "title": "BornEnum"
+        },
+        "Name": {
+            "type": "string",
+            "enum": [
+                "Charles M Schulz",
+                "Peppermint Patty",
+                "Snoopy",
+                "Schroeder",
+                "Lucy"
+            ],
+            "title": "Name"
+        },
+        "Qualification": {
+            "type": "string",
+            "enum": [
+                "bold, brash and tomboyish",
+                "brought classical music to the Peanuts strip",
+                "bossy, crabby and selfish"
+            ],
+            "title": "Qualification"
+        },
+        "Text": {
+            "type": "string",
+            "enum": [
+                "Being a Dog Is a Full-Time Job"
+            ],
+            "title": "Text"
+        },
+        "Lang": {
+            "type": "string",
+            "enum": [
+                "pas français"
+            ],
+            "title": "Lang"
+        }
+    }
+}

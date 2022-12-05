@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -->
+<library>
+	<book id="ID_0836217462" available="true">
+		<isbn>0836217462</isbn>
+		<title lang="en">Being a Dog Is a Full-Time Job</title>
+		<author id="CMS">
+			<name>Charles M Schulz</name>
+			<born age="99">1922-11-26</born>
+			<dead>2000-02-12</dead>
+		</author>
+		<character id="PP">
+			<name>Peppermint Patty</name>
+			<born age="56">1966-08-22</born>
+			<qualification>bold, brash and tomboyish</qualification>
+		</character>
+		<character id="Snoopy">
+			<name>Snoopy</name>
+			<born age="72">1950-10-04</born>
+			<qualification>loyal, imaginative, and good-natured beagle</qualification>
+		</character>
+		<character id="Schroeder">
+			<name>Schroeder</name>
+			<born age="71">1951-05-30</born>
+			<qualification>brought classical music to the Peanuts strip</qualification>
+		</character>
+		<character>
+			<name>Lucy</name>
+			<born age="70">1952-03-03</born>
+			<qualification>bossy, crabby and selfish</qualification>
+		</character>
+	</book>
+</library>

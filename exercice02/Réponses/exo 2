@@ -1,0 +1,19 @@
+Ex2)
+
+    3) On peut parfaitement ajouter des nouveaux éléments/attributs dans le DTD
+    4)
+        a. Comment marque t on la séquence d'éléments ?
+            -> La séquence d'éléments est est marquée par "<!ELEMENT nom (elt1, elt2, ...,eltn)>"
+
+        b. l'alternative d'éléments ?
+            -> <!ELEMENT nom (elt1?, (elt2 | ... | eltn))>
+
+        c. Que signifie '*', '+', '?' ?
+            -> Ce sont les cardinalités applicables sur les éléments :
+                - ? : 0:1
+                - + : 1:+infini
+                - * : 0:+infini
+
+        d. Comment spécifier une valeur par défaut pour un attribut ? une valeur obligatoire ?
+            -> Pour spécifier une valeur par défaut : CDATA "val_defaut" ;
+            -> Pour spécifier une valeur obligatoire : #REQUIRED

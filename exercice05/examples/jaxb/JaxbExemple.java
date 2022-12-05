@@ -1,0 +1,47 @@
+import java.io.*;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+
+import java.util.Iterator;
+
+import mon.paquet.*;
+
+public class JaxbExemple {
+	public static void main(String[] args) {
+
+	System.out.println("Processing "+ args[0]);
+
+	// Get a stream from path
+	InputStream stream = null;
+	try {
+		stream = new FileInputStream(args[0]);
+	} catch (FileNotFoundException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	}
+
+	
+	ListeDePersonnes uneListeDePeronnes = null;
+
+ 	JAXBContext jc = null;
+
+	try {
+		jc = JAXBContext.newInstance("mon.paquet");
+		Unmarshaller unmarshaller = jc.createUnmarshaller();
+			uneListeDePeronnes = (ListeDePersonnes)
+			unmarshaller.unmarshal(stream);
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		System.out.println("Debug: uneListeDePeronnes.getPersonne().get(0).getNom()=" +uneListeDePeronnes.getPersonne().get(0).getNom());
+
+    Iterator<Personne> uneListeDePeronnesIterator = uneListeDePeronnes.getPersonne().iterator();
+    while (uneListeDePeronnesIterator.hasNext()) {
+        Personne unePersonne = uneListeDePeronnesIterator.next();
+        System.out.println("Debug: nom de la personne : " +unePersonne.getNom());
+    }
+  }
+
+}

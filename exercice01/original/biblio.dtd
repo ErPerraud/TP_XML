@@ -1,0 +1,39 @@
+<!ELEMENT article ( #PCDATA | math:fn | text:fn )* >
+<!ATTLIST article xmlns:math CDATA #REQUIRED >
+<!ATTLIST article xmlns:text CDATA #FIXED "http://mon.site.fr/TextML.html" >
+
+<!ELEMENT biblio ( livre+, article, html ) >
+<!ATTLIST biblio idList IDREFS #REQUIRED >
+
+<!ELEMENT auteur ( #PCDATA ) >
+
+<!ELEMENT body ( #PCDATA | h1 |BR )* >
+
+<!ELEMENT description ( #PCDATA ) >
+
+<!ELEMENT editeur ( #PCDATA ) >
+
+<!ELEMENT h1 ( #PCDATA ) >
+
+<!ELEMENT head ( title ) >
+
+<!ELEMENT html ( head, body ) >
+<!ATTLIST html xmlns CDATA #REQUIRED >
+
+<!ELEMENT livre ( titre, auteur, editeur, description? ) >
+<!ATTLIST livre ISBN ID #IMPLIED >
+<!ATTLIST livre annee NMTOKEN #REQUIRED >
+<!ATTLIST livre lang (fr|en) "fr">
+<!ATTLIST livre pages CDATA #IMPLIED >
+
+<!ELEMENT math:fn ( #PCDATA ) >
+
+<!ELEMENT text:fn ( #PCDATA ) >
+
+<!ELEMENT title ( #PCDATA ) >
+
+<!ELEMENT titre ( #PCDATA ) >
+
+<!ELEMENT BR EMPTY >
+
+<!ENTITY xml "XML">

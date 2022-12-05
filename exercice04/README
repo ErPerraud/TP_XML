@@ -1,0 +1,18 @@
+dtd2xsd
+-------
+dtd2xsd.pl
+http://www.w3.org/2000/04/schema_hack/
+
+xml2dtd
+-------
+DTDGenerator
+http://saxon.sourceforge.net/dtdgen.html
+
+xml2xsd
+-------
+* jaxb (remplace xmlbeans)
+https://docs.oracle.com/javase/tutorial/jaxb/intro/examples.html
+
+* xmlbeans-2.6.0.zip	15-Aug-2012 00:04	3.6MB
+http://apache.crihan.fr/dist/xmlbeans/binaries/
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="iso-8859-1"?>  
+<!-- ceci est un commentaire visant à décrire le prologue d'un document XML -->
+<biblio idList="a2253096342 a2253096343"> <!-- élément racine -->
+    <!-- un livre -->
+      <!-- ISBN est un attribut de type ID ; c'est donc un nom XML -->
+        <livre annee="1862" ISBN="a2253096342" lang='fr' pages="1500">
+            <titre>Les Misérables</titre>
+            <auteur>Victor Hugo</auteur>
+            <editeur>Lacroix et Verboeckhoven</editeur>
+        </livre>
+      <livre annee="1862" ISBN="a2253096342" lang="fr" pages="1500">
+        <titre>Les Misérables</titre>
+        <auteur>Victor Hugo</auteur><editeur>Lacroix et Verboeckhoven</editeur>
+      </livre>
+        un autre livre -->
+        <livre annee="1998" ISBN="2253096343">
+            <titre>Autour d'xml</titre>
+            <auteur>José Crivain</auteur>
+        <description>
+          <!-- CDATA (Character Data) : portion de texte non interprétée
+               (à la différence des PCDATA Parsed Character Data
+           -->
+          <![CDATA[ <HTML> est une balise ouvrante et & est une esperluette]]>
+          1 &lt; 2
+        </description>
+        </livre>
+      <article xmlns:math="http://mon.site.fr/MathML.html" xmlns:text="http://mon.site.fr/TextML.html">
+        Ceci est une fonction mathématique : <math:fn>1+1</math:fn>
+        Tandis que cela sera une note de bas de page <text:fn>1+1</text:fn>
+      </article>
+    <!-- XHTML-->
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <title>Hello world!</title>
+       </head>
+        <body>
+          <h1>This is a heading</h1>
+          This is some text.
+          <br/>
+        </body>
+      </html>
+    <!-- cible instruction -->
+    <?php
+      function maFonc($x)
+        x=24;
+        echo "bonjour";
+        for($i=1;$i<=10;$i=$i+1) x=x+1;
+        return x;
+    ?>
+</biblio>	
+	

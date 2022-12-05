@@ -1,0 +1,26 @@
+Soient
+  * monXSchema.xs
+  * unXMLDocument.xml
+
+Valider un document XML
+
+  xmllint --schema library03.xsd library03.xml --noout 
+
+Générer l'API correspondant à un XML Schema pour être intégrer dans un certain package
+
+  mkdir src
+  xjc -p my.library library03.xsd -d src
+
+Manipuler l'API
+  * Un exemple de code avec explication http://www.oracle.com/technetwork/articles/javase/jaxb-141136.html
+
+  * Un autre exemple : Voir le support de Anders Moeller de la diapo 26 à 33 (en particulier la 33 !)
+
+JaxbExemple
+  # compilation
+    mkdir bin
+    javac -d bin src/my/library/*
+    javac -sourcepath src  -d bin JaxbExemple.java 
+
+  # exécution
+  java -classpath bin JaxbExemple library03.xml
