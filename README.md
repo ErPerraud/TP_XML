@@ -257,10 +257,19 @@ Votre travail est à rendre en binôme. Déposer sur madoc votre travail sous la
     * -> Pour spécifier une valeur obligatoire : #REQUIRED
 
 * exercice 03 : un diagramme de classe correspondant au XSD original de l'exercice 03
+* 
 * exercice 03 question 3 : votre réponse sur comment "définir dans un XSD un attribut et un élément `age` qui ne peuvent être que de 1 à 3 digits et ce pour l'élément `born` (un exemple de code avec une explication est suffisant) 
+* 
+* 
 * exercice 05 : le projet java, en particulier les répertoires/fichiers `src` (fichiers source généré/développé et autres), `bin` (binaire), `xml` et `xsd` ; avec VOS NOMS EN COMMENTAIRE DANS L'EN-TÊTE du fichier développé !
+* 
+* 
 * exercice 06 question 2
+* 
+* 
 * exercice 06 question 3
+* 
+* 
 
 Une attention particulière sera donnée à votre sensibilité à vous mettre à la place de l'utilisateur/correcteur de votre rendu : veiller à mettre les fichiers nécessaires pour que votre projet soit auto-suffisant, indiquer l'usage de votre code aussi bien pour la compilation et l'exécution en ligne de commande, indiquer l'avancement (i.e. les questions qui ont été traitées, qui fonctionnent et leur pendant), ...
 
